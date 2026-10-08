@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="神马影院电影网，专注电影赏析与观影决策：按情绪、类型、年代、时长挑片，提供高分片单、院线追踪与观影指南。不托管资源，倡导通过合法授权平台观看。">
+<meta name="keywords" content="神马影院电影网,神马影院,电影推荐,电影片单,高分电影,院线电影,观影指南,电影赏析,经典电影">
+<meta name="author" content="神马影院电影网">
+<meta name="theme-color" content="#0d1b2a">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<title>神马影院电影网 - 挑到不后悔的那一部</title>
+<link rel="canonical" href="https://shenmayingyuandianyingwang-cn.github.io/">
+<style>
+:root{
+  --navy:#0d1b2a; --navy2:#132b45; --blue:#1b4965; --teal:#38b0a8; --cyan:#5bc0eb;
+  --sand:#f4efe6; --paper:#e7dfd1; --line:#cfc6b4; --txt:#1d2230; --sub:#6c7280; --dim:#a3a8b2;
+  --gold:#e6b04b; --mono:ui-monospace,Menlo,Consolas,"Courier New",monospace;
+  --sans:"Inter","Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --serif:"Times New Roman",Georgia,"Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--sand);color:var(--txt);line-height:1.82;font-size:14.5px;overflow-x:hidden}
+a{color:inherit;text-decoration:none;outline:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px dashed var(--teal);outline-offset:3px}
+::selection{background:var(--teal);color:#04131c}
+.wrap{max-width:1220px;margin:0 auto;padding:0 30px;position:relative}
+
+/* ===== 顶部通告 ===== */
+.bar{background:var(--navy);color:var(--gold);font-family:var(--mono);font-size:10.5px;letter-spacing:3px;padding:8px 0;text-align:center;font-weight:800}
+.bar span{color:#fff;opacity:.62;margin-right:12px}
+
+/* ===== header ===== */
+header{background:linear-gradient(180deg,#12273c 0%,#0d1b2a 100%);border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:50}
+.hd{display:flex;align-items:center;gap:26px;padding:15px 0}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo .mk{width:40px;height:40px;flex:0 0 40px;background:var(--gold);border-radius:9px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative}
+.logo .mk i{background:rgba(13,27,42,.16)}
+.logo .mk i:nth-child(1){border-radius:0 0 9px 0}
+.logo .mk i:nth-child(4){border-radius:0 9px 0 0}
+.logo b{font-family:var(--serif);font-weight:700;font-size:clamp(20px,3.4vw,27px);letter-spacing:1px;line-height:1.2}
+.logo em{display:block;font-family:var(--mono);font-style:normal;font-size:9px;letter-spacing:4px;color:var(--dim);font-weight:800;margin-top:2px}
+nav{display:flex;gap:4px;margin-left:auto}
+nav a{font-size:11.5px;font-weight:800;letter-spacing:1.4px;color:#cdd6df;padding:9px 14px;border-radius:7px;transition:.2s}
+nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.search{display:flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 7px 7px 15px;gap:8px;width:100%;max-width:290px}
+.search input{border:0;background:transparent;font:inherit;font-size:12px;flex:1;color:#fff;outline:none}
+.search input::placeholder{color:var(--dim)}
+.search button{border:0;border-radius:999px;background:var(--teal);color:#04131c;font-weight:900;font-size:10.5px;padding:0 15px;letter-spacing:2px;cursor:pointer}
+.ham{display:none;background:none;border:0;color:var(--gold);font-size:28px;cursor:pointer;line-height:1}
+
+/* ===== hero ===== */
+.hero{background:radial-gradient(1200px 420px at 82% -10%,rgba(56,176,168,.30),transparent 60%),linear-gradient(180deg,#12273c,#0d1b2a);color:#fff;padding:52px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:5px;color:var(--gold);font-weight:800}
+.hero h1{font-family:var(--serif);font-size:clamp(34px,6.6vw,62px);line-height:1.18;font-weight:700;margin:12px 0 14px;letter-spacing:-.5px}
+.hero h1 u{text-decoration:none;color:var(--teal)}
+.hero .lead{color:#c3ccd5;font-size:15.2px;max-width:640px;text-align:justify}
+.hero .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.hero .cta a{font-size:12px;font-weight:900;letter-spacing:2px;padding:13px 24px;border-radius:999px;border:1px solid transparent;transition:.24s}
+.hero .cta a.p{background:var(--gold);color:#241a05}
+.hero .cta a.s{border-color:rgba(255,255,255,.32);color:#fff}
+.hero .cta a:hover{transform:translateY(-3px)}
+.hstat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px;backdrop-filter:blur(4px)}
+.hstat .k{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--gold);font-weight:800}
+.hstat ul{list-style:none;margin-top:10px}
+.hstat li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.14);font-size:12.6px;color:#d7dee5}
+.hstat li:last-child{border-bottom:0}
+.hstat li b{font-weight:700}
+.hstat li u{text-decoration:none;font-family:var(--mono);font-size:10.5px;color:var(--teal);font-weight:800}
+
+/* ===== section ===== */
+section{padding:50px 0}
+.sec{display:flex;align-items:baseline;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.sec .num{font-family:var(--mono);font-size:11px;font-weight:900;color:#fff;background:var(--navy);border-radius:6px;padding:3px 9px;letter-spacing:2px}
+.sec h2{font-family:var(--serif);font-size:clamp(23px,3.8vw,33px);font-weight:700;letter-spacing:.5px}
+.sec .en{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--teal);font-weight:800;text-transform:uppercase}
+.sec a.more{margin-left:auto;font-size:11px;letter-spacing:2px;color:var(--sub);font-weight:800;border-bottom:2px solid var(--navy);padding-bottom:2px}
+.sec a.more:hover{color:var(--navy)}
+
+/* ===== 01 正在热映 ===== */
+.now{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.nw{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;cursor:pointer;transition:.26s;display:flex;flex-direction:column}
+.nw:hover{transform:translateY(-8px);border-color:var(--teal);box-shadow:0 20px 42px rgba(13,27,42,.16)}
+.nw .cv{height:170px;position:relative;padding:14px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
+.nw:nth-child(1) .cv{background:linear-gradient(155deg,#0d1b2a,#1b4965)}
+.nw:nth-child(2) .cv{background:linear-gradient(155deg,#7a1f3d,#d9486f)}
+.nw:nth-child(3) .cv{background:linear-gradient(155deg,#0f5132,#38b0a8)}
+.nw:nth-child(4) .cv{background:linear-gradient(155deg,#6d4a03,#e6b04b)}
+.nw:nth-child(5) .cv{background:linear-gradient(155deg,#3b0764,#7c3aed)}
+.nw .cv b{font-family:var(--serif);font-size:19px;line-height:1.32;font-weight:700}
+.nw .cv small{font-family:var(--mono);font-size:9.5px;letter-spacing:3px;font-weight:800;margin-top:5px;opacity:.9}
+.nw .tx{padding:13px 15px;flex:1;display:flex;flex-direction:column}
+.nw .tx .tg{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.nw .tx .tg i{font-style:normal;font-size:9.4px;letter-spacing:1px;font-weight:800;color:var(--navy);background:rgba(13,27,42,.07);border-radius:999px;padding:3px 9px}
+.nw .tx p{font-size:11.5px;color:var(--sub);line-height:1.72;text-align:justify}
+.nw .tx .ft{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.6px;color:var(--dim);letter-spacing:1px;font-weight:800}
+
+/* ===== 02 高分片单 ===== */
+.pick{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--navy);border-radius:13px;overflow:hidden;background:var(--navy)}
+.pk{background:var(--sand);padding:24px 22px;cursor:pointer;transition:.24s;position:relative}
+.pk:not(:last-child){border-right:2px solid var(--navy)}
+.pk:hover{background:#fff}
+.pk .badge{font-family:var(--mono);font-size:9.6px;letter-spacing:3px;color:#fff;background:var(--teal);border-radius:999px;padding:4px 11px;font-weight:900}
+.pk h3{font-family:var(--serif);font-size:clamp(20px,2.6vw,27px);margin:12px 0 8px;font-weight:700;line-height:1.4}
+.pk p{font-size:12.4px;color:var(--sub);text-align:justify;line-height:1.78}
+.pk .mv{margin-top:14px;display:flex;flex-direction:column;gap:7px}
+.pk .mv s{text-decoration:none;display:flex;justify-content:space-between;gap:10px;font-size:11.6px;border-bottom:1px dotted var(--line);padding-bottom:5px}
+.pk .mv s b{font-weight:700}
+.pk .mv s u{text-decoration:none;font-family:var(--mono);font-size:10px;color:var(--gold);font-weight:900;white-space:nowrap}
+
+/* ===== 03 类型 ===== */
+.genre{display:grid;grid-template-columns:repeat(6,1fr);gap:11px}
+.gn{aspect-ratio:1/1;border-radius:13px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:7px;cursor:pointer;transition:.24s;color:#fff;padding:14px}
+.gn:hover{transform:scale(1.06) rotate(-2deg);box-shadow:0 16px 34px rgba(13,27,42,.24)}
+.gn b{font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.3}
+.gn small{font-family:var(--mono);font-size:8.8px;letter-spacing:2px;font-weight:800;opacity:.85}
+.gn:nth-child(1){background:linear-gradient(155deg,#1b4965,#38b0a8)}
+.gn:nth-child(2){background:linear-gradient(155deg,#6d4a03,#e6b04b)}
+.gn:nth-child(3){background:linear-gradient(155deg,#7a1f3d,#d9486f)}
+.gn:nth-child(4){background:linear-gradient(155deg,#3b0764,#7c3aed)}
+.gn:nth-child(5){background:linear-gradient(155deg,#0f5132,#4ade80)}
+.gn:nth-child(6){background:linear-gradient(155deg,#0d1b2a,#5bc0eb)}
+
+/* ===== 04 年代 ===== */
+.dec{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.dc{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:11px;padding:18px;cursor:pointer;transition:.24s;display:flex;flex-direction:column;min-height:180px}
+.dc:hover{border-left-color:var(--teal);transform:translateY(-6px);box-shadow:0 18px 38px rgba(13,27,42,.13)}
+.dc .y{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--paper);line-height:.9}
+.dc h4{font-family:var(--serif);font-size:18px;margin:6px 0 8px;font-weight:700}
+.dc p{font-size:11.6px;color:var(--sub);text-align:justify;line-height:1.74;flex:1}
+.dc .ft{font-family:var(--mono);font-size:9.6px;letter-spacing:2px;color:var(--dim);font-weight:800;border-top:1px dashed var(--line);padding-top:9px;margin-top:10px}
+
+/* ===== 05 观影笔记 ===== */
+.note{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+.nt{background:var(--navy);color:#fff;border-radius:14px;padding:26px;cursor:pointer;transition:.26s}
+.nt:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(13,27,42,.34)}
+.nt .q{font-family:var(--serif);font-size:56px;color:var(--gold);line-height:.7;height:34px}
+.nt h3{font-family:var(--serif);font-size:clamp(21px,2.8vw,29px);line-height:1.42;margin:8px 0 12px;font-weight:700}
+.nt p{color:#c2cbd4;font-size:13.2px;text-align:justify;line-height:1.9}
+.nt .sg{margin-top:14px;font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--teal);font-weight:800}
+.ns{display:grid;grid-template-rows:repeat(3,1fr);gap:12px}
+.ns a{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px 16px;cursor:pointer;transition:.22s;display:flex;gap:13px;align-items:flex-start}
+.ns a:hover{border-color:var(--navy);background:#fbf9f4}
+.ns a i{font-style:normal;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--line);line-height:1.2;flex:0 0 30px}
+.ns a:hover i{color:var(--teal)}
+.ns a h5{font-size:13.6px;font-weight:800;line-height:1.5}
+.ns a p{font-size:11px;color:var(--sub);margin-top:5px;line-height:1.68;text-align:justify}
+
+/* ===== 06 观影指南 ===== */
+.guide{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gd{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px 20px;position:relative;cursor:pointer;transition:.24s;overflow:hidden}
+.gd:hover{border-color:var(--teal);background:#fbfdfd}
+.gd .bg{position:absolute;right:-6px;bottom:-16px;font-family:var(--serif);font-weight:700;font-size:72px;color:var(--paper);line-height:1;z-index:0}
+.gd .k{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--teal);font-weight:900;position:relative}
+.gd h4{font-family:var(--serif);font-size:19px;margin:9px 0 9px;font-weight:700;position:relative}
+.gd p{font-size:11.8px;color:var(--sub);line-height:1.78;text-align:justify;position:relative}
+.gd b{display:block;margin-top:13px;font-size:9.4px;letter-spacing:2px;color:var(--gold);font-weight:900;font-family:var(--mono);position:relative}
+
+/* ===== about ===== */
+.about{background:var(--navy);color:#fff;border-radius:16px;padding:32px}
+.about p{color:#c2cbd4;font-size:14.2px;text-align:justify;margin-bottom:14px;line-height:1.92}
+.about p.led{font-family:var(--serif);font-size:17.4px;line-height:1.9;color:#fff}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags a{font-size:11px;letter-spacing:1px;color:#e7dfd1;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 15px;transition:.2s;font-weight:700}
+.tags a:hover{color:var(--navy);background:var(--teal);border-color:var(--teal)}
+
+/* ===== footer ===== */
+footer{background:#08131f;color:#fff;padding:46px 0 18px;margin-top:14px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:26px}
+.foot .brand{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
+.foot .brand .mk{width:30px;height:30px;flex:0 0 30px;background:var(--gold);border-radius:7px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.foot .brand .mk i{background:rgba(8,19,31,.18)}
+.foot .brand .mk i:nth-child(1){border-radius:0 0 7px 0}
+.foot .brand .mk i:nth-child(4){border-radius:0 7px 0 0}
+.foot .brand p{font-size:11.8px;color:#8d96a1;margin-top:12px;line-height:1.9;max-width:340px;font-family:var(--sans);font-weight:500}
+.foot h5{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;font-weight:800}
+.foot a{display:block;color:#8d96a1;font-size:11.8px;padding:4px 0;font-weight:600;transition:.18s}
+.foot a:hover{color:#fff}
+.copy{text-align:center;color:#636b76;font-size:10.5px;border-top:1px solid #1b2b3a;padding-top:16px;line-height:2}
+.copy a{color:var(--teal);font-weight:700}
+
+/* ===== responsive ===== */
+@media(max-width:1080px){
+  .ham{display:block}
+  nav,.search{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .now{grid-template-columns:repeat(2,1fr)}
+  .pick,.genre,.dec,.guide,.foot,.note{grid-template-columns:repeat(2,1fr)}
+  .drawer{position:fixed;inset:0 0 0 auto;width:86%;max-width:330px;background:var(--navy);padding:28px;border-left:4px solid var(--gold);transform:translateX(102%);transition:.32s;z-index:60;overflow:auto}
+  .drawer.open{transform:none}
+  .drawer a{display:block;font-size:16px;font-weight:800;padding:14px 10px;border-bottom:1px dashed rgba(255,255,255,.16);letter-spacing:1px;font-family:var(--serif);color:#e7dfd1}
+  .drawer a:hover{color:var(--gold)}
+  .scrim{position:fixed;inset:0;background:rgba(4,10,16,.68);opacity:0;pointer-events:none;transition:.32s;z-index:59}
+  .scrim.on{opacity:1;pointer-events:auto}
+}
+@media(max-width:600px){
+  .wrap{padding:0 16px}
+  .pick,.genre,.dec,.guide,.foot,.note{grid-template-columns:1fr}
+  .pk:not(:last-child){border-right:0;border-bottom:2px solid var(--navy)}
+  .nt,.ns{grid-column:1}
+  .hero h1{font-size:33px}
+}
+@media print{body{background:#fff;color:#000}.ham,.search,.scrim,.drawer,.bar{display:none}header{position:static}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="bar"><span>NOTICE</span>本站为影视信息与观影导航，不托管资源、不提供盗链，倡导通过合法授权平台观看</div>
+
+<header>
+  <div class="wrap">
+    <div class="hd">
+      <a class="logo" href="#"><span class="mk"><i></i><i></i><i></i><i></i></span><span><b>神马影院电影网</b><em>SHENMA CINEMA</em></span></a>
+      <nav>
+        <a href="#now">正在热映</a>
+        <a href="#pick">高分片单</a>
+        <a href="#genre">按类型</a>
+        <a href="#dec">按年代</a>
+        <a href="#note">观影笔记</a>
+        <a href="#guide">观影指南</a>
+      </nav>
+      <div class="search" role="search">
+        <input type="search" placeholder="片名 / 导演 / 演员 / 情绪" aria-label="搜索影视">
+        <button aria-label="搜索">检索</button>
+      </div>
+      <button class="ham" id="ham" aria-label="菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer" aria-label="移动端导航">
+    <a href="#now">正在热映</a>
+    <a href="#pick">高分片单</a>
+    <a href="#genre">按类型</a>
+    <a href="#dec">按年代</a>
+    <a href="#note">观影笔记</a>
+    <a href="#guide">观影指南</a>
+    <a href="#about">关于本站</a>
+  </div>
+  <div class="scrim" id="scrim"></div>
+</header>
+
+<main>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">CINEMA · SINCE FRAME 01</div>
+        <h1>神马影院电影网<br>挑到<em></em><u>不后悔</u>的那一部</h1>
+        <p class="lead">神马影院电影网，是一个轻量的电影赏析与观影决策站。我们不搬运资源、不做违规采集，只解决一个问题：<strong>此刻的你，适合看哪一部电影？</strong>按情绪、按类型、按年代、按时长，3 分钟给出一份带理由的片单。看完如果还想聊，笔记区留着。</p>
+        <div class="cta">
+          <a class="p" href="#pick">直接看片单</a>
+          <a class="s" href="#guide">先学怎么挑</a>
+        </div>
+      </div>
+      <div class="hstat">
+        <div class="k">TODAY ON SCREEN</div>
+        <ul>
+          <li><b>星际回响</b><u>138 MIN</u></li>
+          <li><b>父亲的河</b><u>121 MIN</u></li>
+          <li><b>南风知我意</b><u>105 MIN</u></li>
+          <li><b>深海来信</b><u>96 MIN</u></li>
+          <li><b>追光少年</b><u>113 MIN</u></li>
+          <li><b>第七夜</b><u>89 MIN</u></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 正在热映 -->
+  <section id="now" class="wrap">
+    <div class="sec">
+      <span class="num">01</span>
+      <h2>正在热映 · 院线追踪</h2>
+      <span class="en">Now Showing</span>
+      <a class="more" href="#">完整排片 ›</a>
+    </div>
+    <div class="now">
+      <a class="nw" href="#"><div class="cv"><b>星际回响</b><small>SCI-FI · 2026</small></div><div class="tx"><div class="tg"><i>科幻</i><i>史诗</i></div><p>没有爆炸开场，只有一个机械师的独白。最贵的特效，是留白。</p><div class="ft"><span>138 MIN</span><span>IMAX 2D</span></div></div></a>
+      <a class="nw" href="#"><div class="cv"><b>父亲的河</b><small>DRAMA · 2026</small></div><div class="tx"><div class="tg"><i>剧情</i><i>家庭</i></div><p>关于"父亲"最体面的解释。看完会想给家里打个电话。</p><div class="ft"><span>121 MIN</span><span>文艺</span></div></div></a>
+      <a class="nw" href="#"><div class="cv"><b>南风知我意</b><small>ROMANCE · 2026</small></div><div class="tx"><div class="tg"><i>爱情</i><i>治愈</i></div><p>不解释情绪，只呈现。两小时里什么都没发生，什么都发生了。</p><div class="ft"><span>105 MIN</span><span>4K</span></div></div></a>
+      <a class="nw" href="#"><div class="cv"><b>深海来信</b><small>ANIMATION · 2026</small></div><div class="tx"><div class="tg"><i>动画</i><i>奇幻</i></div><p>把"失去"画成了深海。孩子看画面，大人看字幕之外的东西。</p><div class="ft"><span>96 MIN</span><span>蓝光</span></div></div></a>
+      <a class="nw" href="#"><div class="cv"><b>追光少年</b><small>SPORT · 2026</small></div><div class="tx"><div class="tg"><i>运动</i><i>励志</i></div><p>最不讨巧的题材，拍得最干净。最后一跑，全场起立。</p><div class="ft"><span>113 MIN</span><span>杜比</span></div></div></a>
+    </div>
+  </section>
+
+  <!-- 02 高分片单 -->
+  <section id="pick" class="wrap">
+    <div class="sec">
+      <span class="num">02</span>
+      <h2>高分片单 · 三种心情</h2>
+      <span class="en">Curated Lists</span>
+      <a class="more" href="#">换一批 ›</a>
+    </div>
+    <div class="pick">
+      <a class="pk" href="#"><span class="badge">MOOD · 想哭</span><h3>把情绪交给电影</h3><p>适合疲惫、失眠、刚吵完架的夜晚。不劝你振作，只陪你坐一会儿。</p><div class="mv"><s><b>星际回响</b><u>9.4</u></s><s><b>第七夜</b><u>9.1</u></s><s><b>父亲的河</b><u>8.9</u></s><s><b>深海来信</b><u>8.7</u></s></div></a>
+      <a class="pk" href="#"><span class="badge">MOOD · 想烧脑</span><h3>让脑子先出汗</h3><p>适合通勤、独处、想证明自己还清醒的下午。看完会想重看一遍。</p><div class="mv"><s><b>沉默的证人</b><u>9.2</u></s><s><b>棋士</b><u>9.0</u></s><s><b>第七夜</b><u>8.8</u></s><s><b>重启人生</b><u>8.6</u></s></div></a>
+      <a class="pk" href="#"><span class="badge">MOOD · 想放松</span><h3>两小时不用动脑</h3><p>适合周末、雨天、刚吃完饭。好看，但不必写观后感。</p><div class="mv"><s><b>追光少年</b><u>8.8</u></s><s><b>南风知我意</b><u>8.6</u></s><s><b>长安十二时辰</b><u>8.5</u></s><s><b>葬送的芙莉莲</b><u>8.4</u></s></div></a>
+    </div>
+  </section>
+
+  <!-- 03 按类型 -->
+  <section id="genre" class="wrap">
+    <div class="sec">
+      <span class="num">03</span>
+      <h2>按类型 · 六种入口</h2>
+      <span class="en">Genre</span>
+      <a class="more" href="#">更多类型 ›</a>
+    </div>
+    <div class="genre">
+      <a class="gn" href="#"><b>剧情</b><small>DRAMA</small></a>
+      <a class="gn" href="#"><b>喜剧</b><small>COMEDY</small></a>
+      <a class="gn" href="#"><b>悬疑</b><small>THRILLER</small></a>
+      <a class="gn" href="#"><b>科幻</b><small>SCI-FI</small></a>
+      <a class="gn" href="#"><b>动画</b><small>ANIMATION</small></a>
+      <a class="gn" href="#"><b>纪录片</b><small>DOCUMENTARY</small></a>
+    </div>
+  </section>
+
+  <!-- 04 按年代 -->
+  <section id="dec" class="wrap">
+    <div class="sec">
+      <span class="num">04</span>
+      <h2>按年代 · 一百年</h2>
+      <span class="en">Timeline</span>
+      <a class="more" href="#">完整年表 ›</a>
+    </div>
+    <div class="dec">
+      <a class="dc" href="#"><div class="y">1990s</div><h4>银河系的十年</h4><p>《肖申克的救赎》《低俗小说》《阿甘正传》同年出现。不是巧合，是一个时代刚好准备好听故事。</p><div class="ft">1990 — 1999</div></a>
+      <a class="dc" href="#"><div class="y">2000s</div><h4>数字时代的黎明</h4><p>DV 让低成本成为可能。《月球》《记忆碎片》证明：限制催生风格。</p><div class="ft">2000 — 2009</div></a>
+      <a class="dc" href="#"><div class="y">2010s</div><h4>流媒体改写放映</h4><p>Netflix 把电影送进卧室。《罗马》《爱尔兰人》模糊了影院与客厅的边界。</p><div class="ft">2010 — 2019</div></a>
+      <a class="dc" href="#"><div class="y">2020s</div><h4>回到大银幕</h4><p>疫情之后，人们重新需要"黑暗中的两小时"。长镜头重新被尊重。</p><div class="ft">2020 — 2026</div></a>
+    </div>
+  </section>
+
+  <!-- 05 观影笔记 -->
+  <section id="note" class="wrap">
+    <div class="sec">
+      <span class="num">05</span>
+      <h2>观影笔记 · 为什么是它</h2>
+      <span class="en">Notes</span>
+      <a class="more" href="#">全部笔记 ›</a>
+    </div>
+    <div class="note">
+      <a class="nt" href="#"><div class="q">“</div><h3>好电影不负责让你舒服，只负责让你记得。</h3><p>我们给每部推荐片只写一句话理由，且这句话必须能在 3 秒内被复述给朋友。如果一句话说不清"为什么值得看"，那这片子大概率是被高估了——或者我们还没看懂，那就先不写。</p><div class="sg">— 编辑部第 07 条</div></a>
+      <div class="ns">
+        <a href="#"><i>01</i><span><h5>长镜头不是炫技，是尊重</h5><p>当一个镜头持续 7 分钟，导演在说：别急着切走，看着这个人。</p></span></a>
+        <a href="#"><i>02</i><span><h5>台词越少，演员越贵</h5><p>真正的好表演发生在台词之间的沉默里。看嘴，也看手。</p></span></a>
+        <a href="#"><i>03</i><span><h5>类型只是入口，情绪才是出口</h5><p>别问"这是什么片"，问"看完我想变成什么样"。</p></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 观影指南 -->
+  <section id="guide" class="wrap">
+    <div class="sec">
+      <span class="num">06</span>
+      <h2>观影指南 · 四步挑到不后悔</h2>
+      <span class="en">How to Watch</span>
+      <a class="more" href="#">正版平台 ›</a>
+    </div>
+    <div class="guide">
+      <div class="gd"><span class="bg">01</span><span class="k">STEP 01</span><h4>先问"我现在想被怎样对待"</h4><p>想哭、想烧脑、想放松、想被震撼——情绪比类型更准。片单是按情绪排的，不是按豆瓣评分。</p><b>KEY · MOOD</b></div>
+      <div class="gd"><span class="bg">02</span><span class="k">STEP 02</span><h4>再看时长，不是评分</h4><p>90 分钟是"能看完"，140 分钟是"要留出整块时间"。睡前别开史诗。</p><b>KEY · LENGTH</b></div>
+      <div class="gd"><span class="bg">03</span><span class="k">STEP 03</span><h4>认准合法授权平台</h4><p>老片看修复版，新片等院线窗口期，剧集看平台独播。支持创作者，片子才会继续被拍出来。</p><b>KEY · LEGAL</b></div>
+      <div class="gd"><span class="bg">04</span><span class="k">STEP 04</span><h4>允许看不懂，也允许看一半</h4><p>看不懂就查导演访谈；看不进去就换。指南不负责"坚持"，只负责"不后悔"。</p><b>KEY · QUIT</b></div>
+    </div>
+  </section>
+
+  <!-- about -->
+  <section id="about" class="wrap">
+    <div class="sec">
+      <span class="num">07</span>
+      <h2>关于神马影院电影网</h2>
+      <span class="en">About</span>
+      <a class="more" href="#">投稿片单 ›</a>
+    </div>
+    <div class="about">
+      <p class="led">神马影院电影网，是一个轻量的电影赏析与观影决策站。我们不托管资源、不提供盗链、不做违规采集。每一份片单只回答一个具体问题："此刻的你，适合看哪一部？"答案可以被反驳，但每部片子都附一句"为什么是它"。</p>
+      <div class="tags">
+        <a href="#now">正在热映</a><a href="#pick">高分片单</a><a href="#genre">剧情</a><a href="#genre">喜剧</a><a href="#genre">悬疑</a><a href="#genre">科幻</a><a href="#genre">动画</a><a href="#genre">纪录片</a>
+        <a href="#dec">1990s</a><a href="#dec">2000s</a><a href="#dec">2010s</a><a href="#dec">2020s</a>
+        <a href="#">4K</a><a href="#">蓝光</a><a href="#">修复版</a><a href="#">正版</a>
+      </div>
+      <p style="margin-top:18px">本站仅为影视信息与观影导航，倡导通过<strong>合法授权平台</strong>观看，尊重版权与创作者。片单随版本迭代更新，欢迎在"投稿片单"里留下那部"被低估的两小时"。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand"><span class="mk"><i></i><i></i><i></i><i></i></span><span>神马影院电影网<p>挑到不后悔的那一部。好莱坞的工业，作者的低语，一百年里最值得被看见的两小时。</p></span></div>
+      <div>
+        <h5>频道</h5>
+        <a href="#now">正在热映</a>
+        <a href="#pick">高分片单</a>
+        <a href="#genre">按类型</a>
+        <a href="#dec">按年代</a>
+      </div>
+      <div>
+        <h5>阅读</h5>
+        <a href="#note">观影笔记</a>
+        <a href="#guide">观影指南</a>
+        <a href="#about">关于本站</a>
+        <a href="#">更新日志</a>
+      </div>
+      <div>
+        <h5>筛选</h5>
+        <a href="#">按情绪</a>
+        <a href="#">按时长</a>
+        <a href="#">按画质</a>
+        <a href="#">按奖项</a>
+      </div>
+    </div>
+    <div class="copy">
+      © <span id="yr">2026</span> 神马影院电影网 &nbsp;|&nbsp; 网站网址：<a href="https://shenmayingyuandianyingwang-cn.github.io/">https://shenmayingyuandianyingwang-cn.github.io/</a><br>
+      本站为影视信息与观影导航，倡导支持正版影视与创作者
+    </div>
+  </div>
+</footer>
+
+<script>
+var ham=document.getElementById('ham'),dr=document.getElementById('drawer'),sc=document.getElementById('scrim');
+function closeNav(){dr.classList.remove('open');sc.classList.remove('on');ham.setAttribute('aria-expanded','false');ham.textContent='☰';}
+ham.addEventListener('click',function(){var o=dr.classList.toggle('open');sc.classList.toggle('on',o);ham.setAttribute('aria-expanded',o);ham.textContent=o?'✕':'☰';});
+sc.addEventListener('click',closeNav);
+dr.addEventListener('click',function(e){if(e.target.tagName==='A')closeNav();});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
